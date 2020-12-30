@@ -1,0 +1,9 @@
+//       Looping arrays, breaking and continuing
+
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages2);
+console.log(percentages);

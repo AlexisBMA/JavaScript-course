@@ -1,0 +1,38 @@
+//           Type convertion and Coercion.
+// JavaScript only can convert between 3 types: number, string and boolean. 
+
+//             Type convertion
+
+// Type convertion is when we manually conver from one type to antoher
+// Type coercion is when JavaScript autmoatycally converts behind the scenes for us.
+
+const inputYear = '1991';
+// We are converting a string to a number by using 'Number()'
+console.log(Number(inputYear), inputYear);
+// We can sum 18 to a string so we need to cervert the variable frist
+console.log(Number(inputYear) + 18);
+
+// We cannot convert letters into a numbers, so the result will be 'NaN' which is 'not a number'
+console.log(Number('Jonas'));
+console.log(typeof NaN) // it will still be a number, but a invalid one.
+
+// We can use the funtion 'String()' if we want to convert a number to a string.
+console.log(String(1991), 1991);
+
+//              Type coercion
+
+// Every time there is an operation between a number and a string the number will be converted to a string.
+console.log('I am ' + 23 + ' years old.');
+
+// In this cases strings are converted into numbers.
+console.log('23' - '10' - 3);
+console.log('23' * '2');
+console.log('23' / '2');
+console.log('23' > '18');
+
+// This is the only case where the number is converted into a string. (+)
+console.log('23' + '10' + 3);
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n)  // 10

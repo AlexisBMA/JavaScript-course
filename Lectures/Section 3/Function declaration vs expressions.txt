@@ -1,0 +1,24 @@
+//             Function declarations vs Expressions
+
+// We can call a function declaration before it is defined
+const age = calcAge1(1991);
+
+// Function declaration
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+console.log("Your age is ", age);
+
+// A function without a name is called an anonymous function
+// We can store an anonymous function on a variable.
+
+// Function expression
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear
+}
+
+const age2 = calcAge2(1999)
+console.log("Alexis your age is ", age2)
+
+*/

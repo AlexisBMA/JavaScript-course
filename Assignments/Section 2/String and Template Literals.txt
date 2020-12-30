@@ -1,0 +1,4 @@
+// String and Template Literals
+
+const descriptionTL = `${country} is in ${continent} and its ${population} million people speak ${language}`;
+console.log(descriptionTL);

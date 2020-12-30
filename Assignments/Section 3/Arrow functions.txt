@@ -1,0 +1,15 @@
+
+//                      Arrow functions
+
+console.log("\nArrow functions")
+const percentageOfWorld3 = (population) => {
+    return (population / 7900) * 100;
+}
+const mexicoPer3 = percentageOfWorld3(126);
+console.log(mexicoPer3);
+
+const usaPer3 = percentageOfWorld3(328);
+console.log(usaPer3);
+
+const canadaPer3 = percentageOfWorld3(37);
+console.log(canadaPer3);

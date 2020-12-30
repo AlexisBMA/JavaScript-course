@@ -1,0 +1,7 @@
+//  Values and Variables
+const country = "Mexico";
+const continent = "America";
+let population = 126;
+console.log(country);
+console.log(continent);
+console.log(population);

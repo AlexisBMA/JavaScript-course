@@ -1,0 +1,15 @@
+// Type convertion and coercion
+
+// Predict the result of the following operations
+
+const op1 = '9' - '5';
+const op2 = '19' - '13' + '17';
+const op3 = '19' - '13' + 17;
+const op4 = '123' < 57;
+const op5 = 5 + 6 + '4' + 9 - 4 - 2;
+
+console.log(4, op1);
+console.log(617, op2);
+console.log(23, op3);
+console.log(false, op4);
+console.log(1143, op5);

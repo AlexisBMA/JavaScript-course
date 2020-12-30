@@ -1,0 +1,9 @@
+// Basic Operators
+const halfPop = population / 2;
+console.log('Half population: ', halfPop);
+population++;
+console.log(population);
+console.log("Mexico has a greater population that Finland? ", population > 6);
+console.log("Mexico is uner average? ", population < 33);
+const description = country + ' is in ' + continent + ', and its ' + population + ' million people speak ' + language;
+console.log(description);

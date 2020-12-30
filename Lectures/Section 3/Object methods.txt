@@ -1,0 +1,41 @@
+//                   Object methods
+
+const jonas = {
+    firstName Jonas,
+    lastName Schmedtmann,
+    birthYear 1991,
+    job teacher,
+    friends ['Michael', 'Steven', 'Peter'],
+    hasDriversLicence true,
+     We can also store functions inside objects
+     By declaring them as an expression
+
+     Without this.
+     calcAge function (birthYear) {
+         return 2037 - birthYear;
+     }
+
+     this is equal to object on which the method is called
+
+     calcAge function () {
+          this points to the jonas object
+          console.log(this); 
+         return 2037 - this.birthYear;
+     }
+
+    calcAge function () {
+         We can use the this keyword to store a new property
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary function () {
+        return `${this.firstName} is a ${this.age} year old ${this.job}, and he has ${this.hasDriversLicence  'a'  'no'} driver's licence.`;
+    }
+};
+console.log(jonas.calcAge());
+
+ Challenge 
+ 'Jonas is a 46 year old teacher, and he has a driver's licence.'
+ 'Jonas is a 46 year old teacher, and he has no driver's licence.'
+console.log(jonas.getSummary());

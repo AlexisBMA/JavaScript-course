@@ -1,0 +1,30 @@
+//              Truthy and Falsy values
+
+// These are values that when we try to convert them from another type to boolen they will take the value of true or false.
+// 5 falsy values: 0, '', undefined, null, NaN
+// Every other value different from the 5 falsy are converted into true.
+
+// We can convert any type to boolean with 'Boolean()'
+//Type convertion
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Alexis'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+//Type coercion
+
+const money = 01;
+if (money) {
+    console.log("Don't spend it up! 🤬");
+} else {
+    console.log("You should get a job! 🤬")
+}
+
+let height = 0;
+if (height) {
+    console.log("YAY! Height is defined");
+} else {
+    console.log("Height is not defined");
+}

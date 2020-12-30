@@ -1,0 +1,9 @@
+//              Functions calling other functions
+
+const describePopulation = (country, population) => {
+    return `${country} has ${population} million people, which is about ${percentageOfWorld1(126)}% of the world.`;
+}
+
+console.log(describePopulation("Mexico", 126));
+console.log(describePopulation("USA", 328));
+console.log(describePopulation("Canada", 37));

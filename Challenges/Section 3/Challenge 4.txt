@@ -1,0 +1,38 @@
+//                  Challenge #4
+
+function calcTips(bill) {
+    if ((bill >= 50) && (bill <= 300)) {
+        return bill * .15;
+    } else {
+        return bill * .20;
+    }
+}
+
+const bills2 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+let tips2 = [];
+let totals2 = [];
+
+for (let i = 0; i < bills2.length; i++) {
+    temporalTip = calcTips(bills2[i]);
+    tips2.push(temporalTip);
+    totals2.push(temporalTip + bills2[i]);
+}
+console.log("The tips");
+console.log(tips2);
+console.log("The total");
+console.log(totals2);
+
+// Bonus.
+
+function calcAverageTotal(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    console.log(sum);
+    return sum / arr.length;
+}
+
+avg = calcAverageTotal(totals2);
+console.log(avg);

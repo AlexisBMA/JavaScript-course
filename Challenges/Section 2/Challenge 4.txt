@@ -1,0 +1,11 @@
+//                          Challenge #4
+let tip = 0;
+const bill1 = 275;
+const bill2 = 40;
+const bill3 = 430;
+
+bill1 >= 50 && bill1 <= 300 ? console.log(`The bill was ${bill1}, the tip was ${tip = bill1 * .15}, and the total value is ${bill1 + tip}`) : console.log(`The bill was ${bill1}, the tip was ${tip = bill1 * .2}, and the total value is ${bill1 + tip}`);
+
+bill2 >= 50 && bill2 <= 300 ? console.log(`The bill was ${bill2}, the tip was ${tip = bill2 * .15}, and the total value is ${bill2 + tip}`) : console.log(`The bill was ${bill2}, the tip was ${tip = bill2 * .2}, and the total value is ${bill2 + tip}`);
+
+bill3 >= 50 && bill3 <= 300 ? console.log(`The bill was ${bill3}, the tip was ${tip = bill3 * .15}, and the total value is ${bill3 + tip}`) : console.log(`The bill was ${bill3}, the tip was ${tip = bill3 * .2}, and the total value is ${bill3 + tip}`);

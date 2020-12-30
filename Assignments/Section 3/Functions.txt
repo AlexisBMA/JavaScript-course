@@ -1,0 +1,13 @@
+//                  Functions
+
+function describeCountry(country, population, capitalCity) {
+    return (`${country} has ${population} million people and its capital city is ${capitalCity}.`);
+}
+
+const mexico = describeCountry("Mexico", 126, "CDMX");
+console.log(mexico);
+const usa = describeCountry("United States", 328, "Washington D.C.")
+console.log(usa);
+
+const canada = describeCountry("Canada", 37, "Ottawa");
+console.log(canada);

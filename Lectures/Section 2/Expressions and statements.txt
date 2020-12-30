@@ -1,0 +1,18 @@
+
+//            Statements and expressions
+
+
+// An expression produces a value 
+// A statement is a piece of code that doesn't produce a value. Are full sentences that translate our actions. They finish with ';'
+
+// Examples of expressions
+3 + 4
+1991
+true && false && !false
+
+if (23 > 10) {
+    // Example of an statement with an expression inside
+    const str = '23 is bigger';
+}
+
+// There are some places where JavaScript expect an expression and not an statement.

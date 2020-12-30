@@ -1,0 +1,45 @@
+//                          Challenge #2
+
+//                          Data 1
+
+console.log("Data 1")
+MarkWeight = 78;
+MarkHeight = 1.69;
+MarkBMI = MarkWeight / MarkHeight ** 2;
+console.log("Mark's BMI in data 1", MarkBMI)
+
+JohnWeight = 92;
+JohnHeight = 1.95;
+JohnBMI = JohnWeight / JohnHeight ** 2;
+console.log("John's BMI in data 1", JohnBMI);
+
+markHigherBMI = MarkBMI > JohnBMI;
+console.log("Mark's BMI is gratear than John's?", markHigherBMI);
+
+if (markHigherBMI) {
+    console.log(`Mark's BMI (${MarkBMI}) is higher than John's (${JohnBMI})`);
+} else {
+    console.log(`Johns's BMI (${JohnBMI}) is higher than Mark's (${MarkBMI})`);
+}
+
+//                          Data 2
+
+console.log("Data 2")
+MarkWeight = 95;
+MarkHeight = 1.88;
+MarkBMI = MarkWeight / MarkHeight ** 2;
+console.log("Mark's BMI in data 2", MarkBMI)
+
+JohnWeight = 85;
+JohnHeight = 1.76;
+JohnBMI = JohnWeight / JohnHeight ** 2;
+console.log("John's BMI in data 2", JohnBMI);
+
+markHigherBMI = MarkBMI > JohnBMI;
+console.log("Mark's BMI is gratear than John's?", markHigherBMI);
+
+if (markHigherBMI) {
+    console.log(`Mark's BMI (${MarkBMI}) is higher than John's (${JohnBMI})`);
+} else {
+    console.log(`Johns's BMI (${JohnBMI}) is higher than Mark's (${MarkBMI})`);
+}

@@ -1,0 +1,20 @@
+//            The conditional (Terniary) operator
+
+const age = 23;
+// The conditional is represented by '?' it is like an if-else statement. CONDITION ? IF-PART : ELSE-PART
+age >= 18 ? console.log("I like to drink wine! 😜") : console.log("I like to drink water...");
+
+const drink = age >= 18 ? 'wine!!' : 'water...';
+console.log(drink);
+
+// It is the same as do this
+let drink2;
+if (age >= 18) {
+    drink2 = 'wine!!';
+} else {
+    drink2 = 'water...';
+}
+console.log(drink2);
+
+// Since the terniary operator is an expression we can use it in a template literal
+console.log(`I like to drink ${age >= 18 ? 'wine!!' : 'water...'}`);

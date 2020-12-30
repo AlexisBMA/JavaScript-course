@@ -1,0 +1,22 @@
+//              Reviewing functions
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement}`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired.`);
+        return 0;
+    }
+
+}
+
+console.log(yearsUntilRetirement(1999, "Alexis"));
+console.log(yearsUntilRetirement(1970, "Leo"));

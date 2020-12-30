@@ -1,0 +1,9 @@
+//               Introduction to objects
+const myCountry = {
+    country: "Mexico",
+    capital: "CDMX",
+    language: "Spanish",
+    population: 126,
+    neighbours: ["USA", "Guatemala", "Belice"]
+}
+console.log(myCountry);

@@ -1,0 +1,27 @@
+//                      Functions
+
+// A function is a simple piece of code that we can reuse over and over again in our code. Can hold 1 or more complete lines of code.
+
+// Basic structure of a function.
+function logger() {
+    // This is called the function body.
+    console.log('My name is Alexis');
+}
+
+// To use a function we write 'functionName()'. This is called calling/running/inoking the function.
+logger();
+logger();
+logger();
+
+// Receiving parameters in a function. The parameters goes inside the parenthesis.
+function fruitProcessor(apples, oranges) {
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    // We can return anything from the function
+    return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);

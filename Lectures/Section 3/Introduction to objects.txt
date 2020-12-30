@@ -1,0 +1,13 @@
+
+//              Introduction to objects
+
+// To define an object we use the curly braces
+// We can say that the alexis object has 5 properties.
+const alexis = {
+    firstName: "Alexis",
+    lastName: "Monroy",
+    age: 2037 - 1999,
+    occupation: "student",
+    friends: ['Michael', 'Steven', 'Peter']
+}
+

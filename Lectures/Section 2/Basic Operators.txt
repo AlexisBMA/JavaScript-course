@@ -1,0 +1,38 @@
+//                      Basic Operators
+
+// Math operators
+const now = 2037;
+const ageAlexis = now - 1999;
+const ageSarah = now - 2020;
+// We can print multiple values by using a ',' between them.
+console.log(ageAlexis, ageSarah);
+console.log(ageAlexis * 2, ageAlexis / 10, 2 ** 3);
+// 2 *** 3 means 2 to the power of 3
+
+const firstName = 'Bryan';
+const lastName = 'Monroy';
+
+// We can concatenate string by using '+'
+console.log(firstName + ' ' + lastName);
+
+// typeof it is also an operator
+
+// The '=' symbol it is also an operator
+let x = 10 + 5;
+
+// Assignment operators
+x += 10; // += --> x = x + 10 = 25
+x *= 4; // *= --> x = x * 4 = 100
+x++; //     ++ --> x = x + 1 = 101
+x--; //     -- --> x = x - 1 = 100
+x--; //     = 99
+console.log(x);
+
+// Comparison operators: >, <, >=, <=
+console.log(ageAlexis > ageSarah);
+console.log(ageSarah >= 18);
+
+const isFullAge = ageSarah >= 18;
+
+// JavaScript first do the operators and then do the comparison
+console.log(now - 1999 > now - 2018);

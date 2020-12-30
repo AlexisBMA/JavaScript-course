@@ -1,0 +1,31 @@
+
+//            Equality operators
+const age = '18';
+
+// The '===' help us determine if something is strictly equal to another value, it returns a boolean value. Does not perform type coercion.
+
+// The '==' help us determine if something is equal to another value, it returns a boolean. It performs type coercion.
+
+// If the if statement only have 1 line we don't need to open curly braces. We must use this one.
+if (age === 18) console.log("You just became an adult! (strict)");
+if (age == 18) console.log("You just became an adult! (loose)");
+
+// We can easily get a value from the user with prompt()
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+// All the inputs received will be stored as strings
+console.log(typeof favorite);
+
+if (favorite === 23) {
+    console.log("Cool!");
+} else if (favorite === 7) {
+    console.log("7 is also a cool number!");
+} else if (favorite === 9) {
+    console.log("9 is also a cool number!");
+} else {
+    console.log("I don't like your number");
+}
+
+if (favorite !== 23) {
+    console.log("But why not 23?");
+}

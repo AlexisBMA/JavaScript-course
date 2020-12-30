@@ -1,0 +1,18 @@
+//              Basic array operatios (methods)
+
+const neighbours = ["USA", "Guatemala", "Belice"];
+console.log(neighbours);
+neighbours.push("Utopia");
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+
+if (neighbours.includes("Germany")) {
+    console.log(`Problably a central European country`);
+} else {
+    console.log(`Problably not a central European country`);
+}
+
+neighbours[neighbours.indexOf("USA")] = "United States";
+console.log(neighbours);

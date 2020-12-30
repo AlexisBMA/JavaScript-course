@@ -1,0 +1,30 @@
+/*
+//                      This is the lecture #1
+// We can comment lines by using the shortcut ctrl+/
+// The semicolon at the final of a line is not mandatory but it is a good practice.
+let js = "amazing";
+// The console.log command help us display results in the console from the browser.
+console.log(40 + 8 + 23 - 10);
+console.log("Alexis");
+console.log(23);
+
+// We use let to declare variables.
+// The standard to declare ariables in JavaScript is using camel case.
+let firstName = "Bryan Alexis";
+console.log(firstName);
+console.log(firstName);
+console.log(firstName);
+
+// Variable name conventions.
+let jonas_matilda = 'JM';
+
+// For declaring a constant we write the full name of the variable in upper case.
+let PI = 3.1416;
+let myFirstJob = "Programmer";
+let myCurrentJob = "Teacher";
+
+let job1 = "programmer";
+let job2 = "teacher";
+
+console.log(myFirstJob)
+*/

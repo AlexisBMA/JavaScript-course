@@ -1,0 +1,21 @@
+//                      This is the lecture #3
+
+// By default it is a good practice to use const all the time and only use let when we are sure that the value will change at some point.
+
+// We use let to declare variables that can change later in the execution. In javaScript reasign a value to a variable is called mutate the variable. It is bloc scoped.
+
+let age = 30;
+age = 31;
+
+
+// We use const to declare variables that are not supposed to change at any point. We cannot declare empty const variables.
+
+const birthYear = 1999;
+// This is not possible:
+// birthYear = 1990;
+// const job;
+
+
+// Using var it is not recommended. It is function scoped.
+var job = 'programmer';
+job = 'teacher';

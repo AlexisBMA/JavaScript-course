@@ -1,0 +1,9 @@
+// The conditional (terniary) operator
+
+population > 33 ? console.log(`${country}'s population is above the average`) : console.log(`${country}'s population is below average`);
+
+// or 
+console.log(
+    `${country}'s population is ${population > 33 ? 'above' :
+    'below'} average`,
+);

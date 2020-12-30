@@ -1,0 +1,5 @@
+// Let, const and var 
+
+// Changed country, continent and isIsalnd as constants.
+language = 'Spanish';
+// isIsland = true; This is not allowed.

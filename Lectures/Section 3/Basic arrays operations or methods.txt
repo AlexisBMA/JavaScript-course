@@ -1,0 +1,42 @@
+//               Basic array operations (methods)
+
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+// The push method adds element to the end of an array. It returns the length of the new array.
+const newLength = friends.push("Jay");
+console.log(friends);
+console.log(newLength);
+
+// The unshift method adds elements to the beggining of an array. It returns the length of the new array.
+friends.unshift("John");
+console.log(friends);
+
+// The pop method remove the last element from the array. It returns the removed element.
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+// The shift method remove the first element from the array. It returns the removed element.
+friends.shift();
+console.log(friends);
+
+// If we want to know the index of an specific element we can use indexOf to get it.
+console.log(friends.indexOf("Steven"));
+// When the element it's not in the array it returns a -1
+console.log(friends.indexOf("Bob"));
+
+// If we want to check if an element is in an array we can use the includes() method. It returns true or false depending if the element exists or not. It test with strict comparison.
+friends.push(23);
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Bob"));
+console.log(friends.includes("23"));
+console.log(friends.includes(23));
+
+if (friends.includes("Peter")) {
+    console.log("You have a friend called Peter");
+} else {
+    console.log(`You don't have any friend called Peter`);
+}

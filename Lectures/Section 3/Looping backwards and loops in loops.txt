@@ -1,0 +1,23 @@
+//       Looping backwards and loops in loops
+
+const jonasArray = [
+    'Jonas',
+    'Schemdtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+// Looping backwards
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+    console.log(i, jonasArray[i]);
+}
+
+// Loops inside loops
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`----STARTING EXERCISE ${exercise}----`);
+    for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Lifting weigth repetition ${rep} of the exercise ${exercise}! 🏋️‍♂`);
+    }
+}

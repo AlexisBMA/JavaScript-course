@@ -1,0 +1,28 @@
+//             Function declarations vs Expressions
+
+
+console.log("Function declaration");
+function percentageOfWorld1(population) {
+    return population / 7900 * 100;
+}
+const mexicoPer = percentageOfWorld1(126);
+console.log(mexicoPer);
+
+const usaPer = percentageOfWorld1(328);
+console.log(usaPer);
+
+const canadaPer = percentageOfWorld1(37);
+console.log(canadaPer);
+
+console.log("Function expression");
+const percentageOfWorld2 = function (population) {
+    return population / 7900 * 100;
+}
+const mexicoPer2 = percentageOfWorld2(126);
+console.log(mexicoPer2);
+
+const usaPer2 = percentageOfWorld2(328);
+console.log(usaPer2);
+
+const canadaPer2 = percentageOfWorld2(37);
+console.log(canadaPer2);

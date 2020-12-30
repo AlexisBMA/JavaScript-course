@@ -1,0 +1,50 @@
+//                          Challenge #3
+
+const avgDolphins1 = (96 + 108 + 89) / 3;
+const avgKoalas1 = (88 + 91 + 110) / 3;
+console.log("1)")
+console.log("Dolphins: ", avgDolphins1);
+console.log("Koalas: ", avgKoalas1);
+console.log("\n2)")
+if (avgDolphins1 > avgKoalas1) {
+    console.log("The Dolphins won the trophy!");
+} else if (avgDolphins1 === avgKoalas1) {
+    console.log("There has been a draw")
+} else {
+    console.log("The Koalas won the trophy!");
+}
+
+// Bonus 1
+console.log("\nBonus 1");
+const avgDolphins2 = (97 + 112 + 101) / 3;
+const avgKoalas2 = (109 + 95 + 123) / 3;
+console.log("Dolphins: ", avgDolphins2);
+console.log("Koalas: ", avgKoalas2);
+
+if ((avgDolphins2 > avgKoalas2) && (avgDolphins2 >= 100)) {
+    console.log("The Dolphins won the trophy!");
+} else if (avgDolphins2 === avgKoalas2) {
+    console.log("There has been a draw")
+} else if ((avgDolphins2 < avgKoalas2) && (avgKoalas2 >= 100)) {
+    console.log("The Koalas won the trophy!");
+} else {
+    console.log("No one won")
+}
+
+
+// Bonus 2
+console.log("\nBonus 2");
+const avgDolphins3 = (97 + 112 + 101) / 3;
+const avgKoalas3 = (109 + 95 + 106) / 3;
+console.log("Dolphins: ", avgDolphins3);
+console.log("Koalas: ", avgKoalas3);
+
+if ((avgDolphins3 > avgKoalas3) && (avgDolphins3 >= 100)) {
+    console.log("The Dolphins won the trophy!");
+} else if ((avgDolphins3 === avgKoalas3) && avgDolphins3 >= 100 && avgKoalas3 >= 100) {
+    console.log("There has been a draw")
+} else if ((avgDolphins3 < avgKoalas3) && (avgKoalas3 >= 100)) {
+    console.log("The Koalas won the trophy!");
+} else {
+    console.log("No one won")
+}

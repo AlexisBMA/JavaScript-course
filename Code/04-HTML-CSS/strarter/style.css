@@ -1,0 +1,69 @@
+/* To select all the element on the page */
+
+* {
+  /* Reset of CSS presets */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 193);
+  /* All the child elements inside body will be affected by the properties that has inherit */
+  font-family: Arial;
+  font-size: 20px;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* To change only for a specific class use .CLASS */
+.first {
+  color: red;
+  text-align: justify;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* To change only for a specific ID use #CLASS */
+#your-name {
+  background-color: rgb(255, 227, 100);
+  border: 5px solid #444;
+  width: 400px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+/* To apply to n elements */
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: yellowgreen;
+  text-decoration: none;
+}
+
+/* The child selector */
+
+#your-name h2 {
+  /* We affect all h2 that are child of your-name box */
+  color: olivedrab;
+}
+
+#course-image {
+  width: 300px;
+}

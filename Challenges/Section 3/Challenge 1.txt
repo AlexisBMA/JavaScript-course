@@ -1,0 +1,30 @@
+//                  Challenge #1
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// Data 1
+const dolphinsAvg1 = calcAverage(44, 23, 71);
+const koalasAvg1 = calcAverage(65, 54, 49);
+
+// Data 2
+const dolphinsAvg2 = calcAverage(85, 54, 41);
+const koalasAvg2 = calcAverage(23, 34, 27);
+
+function checkWinner(dolphinAvg, koalasAvg) {
+    if (dolphinAvg >= (koalasAvg * 2)) {
+        console.log(`Dolphins win! (${dolphinAvg} vs ${koalasAvg})`);
+    } else if (koalasAvg >= (dolphinAvg * 2)) {
+        console.log(`Koalas win! (${koalasAvg} vs ${dolphinAvg})`);
+    } else {
+        console.log(`No team win (${koalasAvg} vs ${dolphinAvg})😒`);
+    }
+}
+
+console.log("Data 1");
+console.log(`Dolphins: ${dolphinsAvg1}`);
+console.log(`Koalas: ${koalasAvg1}`);
+checkWinner(dolphinsAvg1, koalasAvg1);
+console.log("\nData 2");
+console.log(`Dolphins: ${dolphinsAvg2}`);
+console.log(`Koalas: ${koalasAvg2}`);
+checkWinner(dolphinsAvg2, koalasAvg2);
