@@ -32,3 +32,12 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 // When clicking the 'X' or the overlay we close the modal.
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// Handling keyboard events
+// We pass the event that is happening as an argument
+document.addEventListener('keyup', function (e) {
+  console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
