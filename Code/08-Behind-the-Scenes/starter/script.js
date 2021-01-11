@@ -163,7 +163,6 @@ var addArrow = (a, b) => {
 };
 addArrow(2, 5, 8);
 
-*/
 
 // Primitives vs Objects (Primitives vs Reference types)
 // Primitives are  sotred in the call stack. Objects are stored in the heap.
@@ -185,3 +184,42 @@ const me = {
 const friend = me; // This is creating a pointer to the me object
 friend.age = 27; // This is changing the value in the heap so the stack address will remaing the same.
 console.log(me, friend);
+*/
+
+// Primitive vs Objects in practice
+
+// Primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+// Point the reference that is pointing to the jessica object
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+// marriedJessica = {}; // We cannot change the address value of the stack because its constant.
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+// New object with a copy of jessica2 in jessicaCopy. It only creates a shallow copy.
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log(jessica2, jessicaCopy);
