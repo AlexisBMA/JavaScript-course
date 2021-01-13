@@ -29,6 +29,11 @@ const restaurant = {
     );
   },
 
+  // Rest
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -195,4 +200,117 @@ console.log(restaurantCopy);
 restaurantCopy.name = 'Ristorante di Roma';
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+
+//               Rest pattern and parameters
+
+// The rest pattern collect multiple items and collect them into an array. Its main function its to pack elements.
+
+// Destructuring
+// Spread, because on the right side of '='
+const arr = [1, 2, ...[3, 4]];
+
+// Rest in arrays
+// Rest, because on the left side of '='
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// Rest in objects
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(sat, weekDays);
+
+// Functions
+// Packing arguments.
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+// Rest parameters in our restaurant example. With Rest, we can pass from 1 to N parameters into a function.
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+//          Short circuiting
+
+// Properties about logical operators
+// Use any data type
+// Return any data type
+// Do short-circuting
+
+// OR short-circuting. If the first value is a truthy value it will immediatly be returned
+console.log('-----OR-----');
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+// In this case 'Hello' is the first truthy value so it will be the one logged. Because in the OR opeartor if one of the elements is true then the result of the expression is true.
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// Without short-circuting.
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+// With short-circuting
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// AND short-circuting. When a falsy value is found it is returned immediatly.
+console.log('-----AND-----');
+console.log(0 && 'Jonas');
+// If all the elements are truthy then the last one will be the one returned
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+// Practical example without AND short-circuting
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// Practical example with AND whort-circuting
+restaurant.orderPizza &&
+  restaurant.orderPizza('mushrooms', 'spinach', 'tomato');
+
+
+//      The nullish coalescing operator
+// It works the same way as the OR operator but it compare with nullish values insted of falsy values.
+// Nullish values: null and undefined.
+
+// OR
+restaurant.numGuest = 0;
+const guests = restaurant.numGuest || 10;
+console.log(guests);
+
+// Nullish coalescing operator
+const guestsCorrect = restaurant.numGuest ?? 10;
+console.log(guestsCorrect);
 */
+
+//                  The for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+// We use entries() to get the index of each item.
+for (const item of menu.entries()) {
+  console.log(item);
+}
+
+console.log(...menu.entries());
