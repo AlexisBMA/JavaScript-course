@@ -1,5 +1,23 @@
 'use strict';
 
+// Compute enhanced
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -7,48 +25,32 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  // ES6 Enhanced object literals
+  openingHours,
+
+  // Functions in ES6 Enhanced object literals
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
   // Destructuring an object
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
 
   // Rest
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient, otherIngredients);
   },
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
 };
+
 /*
 
 // Destructuring objects. We use '{}' to destructure.
@@ -301,7 +303,6 @@ console.log(guests);
 // Nullish coalescing operator
 const guestsCorrect = restaurant.numGuest ?? 10;
 console.log(guestsCorrect);
-*/
 
 //                  The for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -309,8 +310,127 @@ const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
 
 // We use entries() to get the index of each item.
-for (const item of menu.entries()) {
-  console.log(item);
+for (const [i, el] of menu.entries()) {
+  // console.log(`${item[0] + 1}: ${item[1]}`);
+  console.log(`${i + 1}: ${el}`); // Using destructuring
+}
+// console.log(...menu.entries());
+
+
+
+//                Enhanced object literals
+
+// All changes done to the original object
+console.log(restaurant);
+
+
+//                      Optional chaining(?.)
+
+// Without optional chaining
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+// With optional chaining we use '?.'
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On day ${day}, we open at ${open}`);
 }
 
-console.log(...menu.entries());
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exits');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exits');
+
+// Arrays
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+console.log(users[0]?.name ?? 'User array empty');
+console.log(users[3]?.name ?? 'User array empty');
+
+
+//      Looping objects: object keys,Values and entries
+
+// Property NAMES (Object.keys(object))
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property Values (Object.values(object))
+const values = Object.values(openingHours);
+console.log(values);
+
+// Property Entries (Object.entries(object))
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+*/
+
+//                    Sets
+// Is basically a collection of unique values. They are also iterable.
+// In sets there are actually no indexes. In fact there is no way of getting values of a set.
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Rissotto',
+  'Pasta',
+  'Pizza',
+]);
+
+// It doesn't log the duplicated values, because all the duplicates are all gone.
+console.log(ordersSet);
+
+// We can pass any iterable to a set.
+console.log(new Set('Jonas'));
+
+// It also could be empty
+console.log(new Set());
+
+// Get the size of a Set
+console.log(ordersSet.size);
+
+// Check if a certaing element is in a set
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+// Add new elements to a set
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread'); // It only adds it one time
+console.log(ordersSet);
+
+// Deleting elements
+ordersSet.delete('Rissotto');
+console.log(ordersSet);
+
+// Looping over a set
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+// Delete all of th elements of a set
+console.log('\n');
+ordersSet.clear();
+console.log(ordersSet);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+// We can use the sets to instantly know how many unique elements are in a certain iterable.
+console.log(new Set(staff).size);
+console.log(new Set('jonasschmedtmann').size);
