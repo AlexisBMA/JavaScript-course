@@ -375,7 +375,7 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
-*/
+
 
 //                    Sets
 // Is basically a collection of unique values. They are also iterable.
@@ -434,3 +434,147 @@ console.log(staffUnique);
 // We can use the sets to instantly know how many unique elements are in a certain iterable.
 console.log(new Set(staff).size);
 console.log(new Set('jonasschmedtmann').size);
+
+
+//                Maps fundamentals
+// Is a data structure to map values to keys. In the maps, the keys can be of any type.
+
+const rest = new Map(); // Creating an empty map
+
+// Adding elements to sets. It returns a new set.
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+// Chain the set method.
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'We are open 😁')
+  .set(false, 'We are closed 😪')
+  .set(false, 'We are closed 😪');
+
+// Get an element from a map
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+// Since we can have boolean keys
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('closed')));
+
+// Methods available on maps
+
+// Check if a map has a certain element
+console.log(rest.has('categories'));
+console.log(rest.has('pizza'));
+
+// Delete elements from a map
+rest.delete(2);
+console.log(rest);
+
+// Size of a map
+console.log(rest.size);
+
+// Remove all the elements from the map
+rest.clear();
+console.log(rest);
+
+// Arrays or objects as keys in maps
+const arr = [1, 2];
+rest.set(arr, 'goodTest');
+
+// Retrieve an element when using an array
+console.log(rest.get(arr));
+
+// Object as a key in a map.
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
+
+//                  Maps iterations
+
+// Another way to create a map
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct! 😋'],
+  [false, 'Try again... 😪'],
+]);
+console.log(question);
+
+// Convert object to map.
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Iteration in maps.
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// Convert a map to an array
+console.log([...question]);
+// console.log(question.entries);
+console.log(...question.keys());
+console.log(...question.values());
+*/
+
+//                Working with Strings Part 1
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+// Indexing a string
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B737'[0]);
+
+// Length of a string
+console.log(airline.length);
+console.log('B737'.length);
+
+// Methods in strings
+
+// First occurrence of a certain character
+console.log(airline.indexOf('r'));
+// Last occurrence of a certain character
+console.log(airline.lastIndexOf('r'));
+// Ocurrance of a certain word. Is case sensitive.
+console.log(airline.indexOf('Portugal'));
+
+// Slice method. Pass as parameter the beggining pos. It return a new string.
+
+console.log(airline.slice(4));
+// slice(beggining, ending)
+console.log(airline.slice(4, 7)); // 7 - 4 = 3
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2)); // Last two characters
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const row = seat.slice(-1);
+  if (row === 'B' || row === 'E') {
+    console.log(`You got the middle seat 🤐`);
+  } else {
+    console.log(`You got lucky 🍀!`);
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
