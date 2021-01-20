@@ -107,7 +107,7 @@ for (const player of Object.values(game.scored)) {
 }
 
 console.log(scorers);
-*/
+
 
 //                      Challenge #3
 const gameEvents = new Map([
@@ -144,3 +144,28 @@ for (const [minute, event] of gameEvents) {
   const part = minute <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${part} HALF] ${minute}: ${event}`);
 }
+*/
+
+//                Coding challenge #4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const button = document.querySelector('button');
+
+const reformatText = function () {
+  // Reading the elements and splitting them into an array
+  const list = document.querySelector('textarea').value;
+  const elements = list.split('\n');
+
+  // Reformating the elements
+  for (const [i, pair] of elements.entries()) {
+    pair;
+    words = pair.toLowerCase().trim().split('_');
+    console.log(
+      (
+        words[0] + words[1].replace(words[1][0], words[1][0].toUpperCase())
+      ).padEnd(20, ' ') + '✅'.repeat(i + 1)
+    );
+  }
+};
+
+button.addEventListener('click', reformatText);

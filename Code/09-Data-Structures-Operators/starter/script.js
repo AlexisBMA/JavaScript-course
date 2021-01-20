@@ -526,7 +526,6 @@ console.log([...question]);
 // console.log(question.entries);
 console.log(...question.keys());
 console.log(...question.values());
-*/
 
 //                Working with Strings Part 1
 
@@ -578,3 +577,133 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+
+
+//                          Working with strings - part 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+
+const passenger = 'jOnAs'; // should look Jonas
+
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const correctFormat = function (name) {
+  const nameLower = name.toLowerCase();
+  const nameCorrect = nameLower[0].toUpperCase() + nameLower.slice(1);
+  return nameCorrect;
+};
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// trim() removes the white spaces from a string
+// We can chain methods.
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+// replace only replace the first ocurrance
+console.log(announcement.replace('door', 'gate'));
+
+// replaceAll replaces all the ocurrences
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Using regular expressions to replace all the ocurrences
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans, includes()
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+
+// Starts with
+console.log(plane.startsWith('Air'));
+console.log(plane.startsWith('A3'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo'))
+  console.log('Part of the new Airbus family');
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun'))
+    console.log('You are not allowed on board!');
+  else console.log('Welcome aboard!');
+};
+console.log('\n');
+checkBaggage('I have a laptod, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+//            Working with string part 3
+
+// Split method. Divides a string by an specific separator.
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+// Join method. Adds a specific separator between variables.
+const newName = ['Mr', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const splitedName = name.split(' ');
+  const namesUpper = [];
+  for (const n of splitedName) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    // Another way using replace
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('bryan monroy');
+
+// Padding a string (to add a number of characters to the stirng until the string has a certaing decired lenght)
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+
+// Real life example
+const maskCreditCard = function (number) {
+  // const str = String(number);
+  // or
+  const str = number + '';
+  const lastNumbers = str.slice(-4);
+  return lastNumbers.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(1234567891012131));
+console.log(maskCreditCard('1234567891011234'));
+
+// Repeat method. Allows us to repeat the same sting multiple times.
+
+const message2 = 'Bad waether... All departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+*/
